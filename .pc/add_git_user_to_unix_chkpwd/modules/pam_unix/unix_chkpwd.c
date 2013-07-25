@@ -134,13 +134,9 @@ int main(int argc, char *argv[])
 	}
 	else {
 	  user = getuidname(getuid());
-          // if user is the git user, allow checking of any passwords
-          if (strcmp(user,"git")) { 
-            uesr=argv[1];
-          }
 	  /* if the caller specifies the username, verify that user
 	     matches it */
-	  else if (strcmp(user, argv[1])) {
+	  if (strcmp(user, argv[1])) {
 	    user = argv[1];
 	    /* no match -> permanently change to the real user and proceed */
 	    if (setuid(getuid()) != 0)
