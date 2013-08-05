@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
 	  user = getuidname(getuid());
           // if user is the git user, allow checking of any passwords
           if (strcmp(user,"git")) { 
-            uesr=argv[1];
+            user=argv[1];
           }
 	  /* if the caller specifies the username, verify that user
 	     matches it */
